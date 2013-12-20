@@ -20,6 +20,10 @@
 	return [[GMPInt alloc] initWithSignedLong:1];
 }
 
++ (GMPInt *)negativeOneObj {
+	return [[GMPInt alloc] initWithSignedLong:-1];
+}
+
 - (GMPInt *)initWithSignedLong:(signed long)signedLong {
 	self = [self init];
 	mpz_init_set_si(value, signedLong);
@@ -80,6 +84,11 @@
 - (void)nextPrime {
 	mpz_t *valuePointer = [self valPtr];
 	mpz_nextprime(*valuePointer, *valuePointer);
+}
+
+- (void)negate {
+    mpz_t *valuePointer = [self valPtr];
+    mpz_neg(*valuePointer, *valuePointer);
 }
 
 - (NSString *)stringValue {

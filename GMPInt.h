@@ -8,14 +8,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "/usr/local/Cellar/gmp/5.0.1/include/gmp.h"
+#import "/usr/local/Cellar/gmp/5.1.3/include/gmp.h"
 
 @interface GMPInt : NSObject {
     mpz_t value;
 }
 
 + (GMPInt *)zeroObj; 
-+ (GMPInt *)oneObj; 
++ (GMPInt *)oneObj;
++ (GMPInt *)negativeOneObj;
 
 - (GMPInt *)initWithSignedLong:(signed long)signedLong;
 - (GMPInt *)initWithUnsignedLong:(unsigned long)unsignedLong;
@@ -31,6 +32,7 @@
 - (void)powerWithUnsignedLong:(unsigned long)op;
 - (void)factorial;
 - (void)nextPrime;
+- (void)negate;
 
 - (NSString *)stringValue;
 - (NSString *)description;
