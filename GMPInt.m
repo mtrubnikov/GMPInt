@@ -143,6 +143,10 @@
 	return true;
 }
 
+- (BOOL)isNegative {
+    return mpz_sgn(value) < 0;
+}
+
 - (mpz_t *)valPtr {
 	return &value;
 }

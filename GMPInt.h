@@ -42,6 +42,7 @@
 - (BOOL)isZero;
 - (BOOL)isOne;
 - (BOOL)isPrime;
+- (BOOL)isNegative;
 
 - (mpz_t *)valPtr;
 
